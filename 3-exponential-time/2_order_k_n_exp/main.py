@@ -2,7 +2,7 @@
 ORDER K^N EXPONENTIAL
 
 ASSIGNMENT:
-Completet the letter combinations function using the algorithm outlined below. 
+Complete the letter combinations function using the algorithm outlined below. 
 It takes string of digits and returns a list of strings of letters.
 1. If the input string is empty, return an empty list.
 2. Define a result list to hold the output strings. 
