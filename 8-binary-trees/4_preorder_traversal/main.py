@@ -20,7 +20,8 @@ For example, the first call to preorder on an entire tree would be:
 bst_node.preorder([])
 
 Here are the algorithm's steps:
-1. If the current node actually contains a value (self.val is not None), visit it by appending its value to the visited array
+1. If the current node actually contains a value (self.val is not None), 
+   visit it by appending its value to the visited array
 2. Recursively traverse the left subtree
 3. Recursively traverse the right subtree
 4. Return the array of visited nodes
