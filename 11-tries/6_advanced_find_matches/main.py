@@ -1,0 +1,48 @@
+from typing import Any
+
+
+class Trie:
+    def advanced_find_matches(
+        self, document: str, variations: dict[str, str]
+    ) -> set[str]:
+        matches = set()
+        for i in range(len(document)):
+            level = self.root
+            for j in range(i, len(document)):
+                ch = document[j]
+                # Check if the character has a variation
+                if ch in variations:
+                    ch = variations[ch]
+                if ch not in level:
+                    break
+                level = level[ch]
+                if self.end_symbol in level:
+                    matches.add(document[i : j + 1])
+        return matches
+
+    # don't touch below this line
+
+    def find_matches(self, document: str) -> set[str]:
+        matches = set()
+        for i in range(len(document)):
+            level = self.root
+            for j in range(i, len(document)):
+                ch = document[j]
+                if ch not in level:
+                    break
+                level = level[ch]
+                if self.end_symbol in level:
+                    matches.add(document[i : j + 1])
+        return matches
+
+    def add(self, word: str) -> None:
+        current = self.root
+        for letter in word:
+            if letter not in current:
+                current[letter] = {}
+            current = current[letter]
+        current[self.end_symbol] = True
+
+    def __init__(self) -> None:
+        self.root = {}
+        self.end_symbol = "*"
