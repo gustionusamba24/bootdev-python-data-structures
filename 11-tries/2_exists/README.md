@@ -1,0 +1,33 @@
+# Exists
+In a trie, "hello", "help" and "hi" would be represented as:
+```
+{
+	"h": {
+		"e": {
+			"l": {
+				"l": {
+					"o": {
+						"*": True
+					}
+				},
+				"p": {
+					"*": True
+				}
+			}
+		},
+		"i": {
+			"*": True
+		}
+	}
+}
+```
+
+## Assignment
+We want to be able to see what words have been added to the trie.
+
+Complete the exists method. It takes a word as input, and should return True if the word exists in the trie, and False if it doesn't.
+1. Starting with the root of the trie, assign the current dictionary to a variable.
+2. Loop over the letters in the word.
+    1. If the current letter is not in the current dictionary, return False.
+    2. Update current to point to the dictionary at the letter key.
+3. Once you get to the last letter, return True if end_symbol is in the current dictionary, and False if it isn't.
